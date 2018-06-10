@@ -1,0 +1,32 @@
+html
+    head
+        title ASN.1 Navigator
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"> 
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.7.3/js/jsplumb.min.js" integrity="sha256-XD0p2+KTMswHajisWh/G58PTlTYIwmtgxzy/QLexLYA=" crossorigin="anonymous"></script>
+        style
+            include asn1.css
+    body
+        div(class = 'container-fluid h-100')
+            div(class = 'row h-100' style = 'max-height: 100%')
+                div(id = 'console' style = 'width: 300px'
+                    class = 'col-md-auto pt-2 border border-light bg-light')
+                    form(id = 'formConsole')
+                        div(class = 'form-group')
+                            input(type = 'text' id = 'inputQuery' autofocus
+                                  placeholder = 'What are you looking for?'
+                                  class = 'form-control')
+                        div(class = 'form-group ml-2 float-right')
+                            input(type = 'button' id = 'buttonQuery'
+                                  value = 'Search' class = 'btn btn-primary')
+                        div(class = 'form-group ml-2 float-right')
+                            input(type = 'button' id = 'buttonClearView'
+                                  value = 'Clear view'
+                                  class = 'btn btn-secondary')
+                div(id = 'canvas' class = 'col'
+                    style = 'position: relative; overflow: scroll;')
+        script
+            include asn1.js
