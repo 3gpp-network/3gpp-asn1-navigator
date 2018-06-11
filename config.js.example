@@ -1,4 +1,4 @@
-// Rename it to `config.ts`
+// Rename it to `config.js`
 var config = {
     port: 3000,
 }

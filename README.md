@@ -5,7 +5,7 @@ Navigate ASN.1 by its name or find its owner
 ## Dependencies
 
 ```sh
-npm install jison pug
+npm install express jison pug
 ```
 
 ## Usage
