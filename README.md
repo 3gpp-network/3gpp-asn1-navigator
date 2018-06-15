@@ -6,9 +6,13 @@ Navigate ASN.1 by its name or find its owner
 
 ```sh
 npm install express jison pug
+git clone https://github.com/gsongosng/3gpp-asn1-parser
+npm link 3gpp-asn1-parser
 ```
 
 ## Usage
+
+First, put all text files containing ASN.1 under `resources` directory
 
 ### Standalone
 

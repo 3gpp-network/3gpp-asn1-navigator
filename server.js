@@ -1,6 +1,16 @@
 var express = require('express');
 var config = require('./config');
-var asn1PerSpec = require('./jison/asn1');
+var fs = require('fs');
+var path = require('path');
+var parse = require('3gpp-asn1-parser');
+
+var asn1PerSpec = {};
+var asn1Dir = './resources';
+var files = fs.readdirSync(path.resolve(__dirname, asn1Dir));
+for (let filename of files) {
+    let input = fs.readFileSync(path.resolve(__dirname, asn1Dir, filename), 'utf8');
+    asn1PerSpec[filename] = parse(input);
+}
 
 function getAsn1ByName(name) {
     var ret = {};
