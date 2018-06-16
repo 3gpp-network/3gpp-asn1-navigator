@@ -2,27 +2,20 @@ var express = require('express');
 var config = require('./config');
 var fs = require('fs');
 var path = require('path');
-var parse = require('3gpp-asn1-parser');
+var parser = require('3gpp-asn1-parser');
 
 var asn1PerSpec = {};
 var asn1Dir = './resources';
 var files = fs.readdirSync(path.resolve(__dirname, asn1Dir));
 for (let filename of files) {
     let input = fs.readFileSync(path.resolve(__dirname, asn1Dir, filename), 'utf8');
-    asn1PerSpec[filename] = parse(input);
+    asn1PerSpec[filename] = parser.parse(input);
 }
 
 function getAsn1ByNameAll(name) {
     var ret = {};
     for (let spec of Object.keys(asn1PerSpec)) {
-        let retModule = {};
-        for (let moduleName of Object.keys(asn1PerSpec[spec])) {
-            let asn1 = asn1PerSpec[spec][moduleName][name];
-            if (!asn1) {
-                continue;
-            }
-            retModule[moduleName] = asn1;
-        }
+        let retModule = parser.getAsn1ByName(name, asn1PerSpec[spec]);
         if (!Object.keys(retModule).length) {
             continue;
         }
