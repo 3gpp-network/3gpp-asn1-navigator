@@ -12,7 +12,7 @@ for (let filename of files) {
     asn1PerSpec[filename] = parse(input);
 }
 
-function getAsn1ByName(name) {
+function getAsn1ByNameAll(name) {
     var ret = {};
     for (let spec of Object.keys(asn1PerSpec)) {
         let retModule = {};
@@ -31,7 +31,7 @@ function getAsn1ByName(name) {
     return ret;
 }
 
-function getAsn1Owner(name) {
+function getAsn1OwnerAll(name) {
     var ret = {};
     for (let spec of Object.keys(asn1PerSpec)) {
         let retPerSpec = {};
@@ -56,20 +56,15 @@ function getAsn1Owner(name) {
     return ret;
 }
 
-exports.api = {
-    getAsn1ByName: getAsn1ByName,
-    getAsn1Owner: getAsn1Owner,
-};
-
 function setupExpress(app, prefix = '') {
     app.get(`${prefix}/`, function(req, res) {
         res.render('asn1');
     });
     app.get(`${prefix}/get/:name`, function(req, res) {
-        res.json(getAsn1ByName(req.params.name));
+        res.json(getAsn1ByNameAll(req.params.name));
     });
     app.get(`${prefix}/owner/:name`, function(req, res) {
-        res.json(getAsn1Owner(req.params.name));
+        res.json(getAsn1OwnerAll(req.params.name));
     });
 }
 exports.setupExpress = setupExpress;
