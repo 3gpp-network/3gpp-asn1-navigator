@@ -1,8 +1,15 @@
 {
-    "name": "3gpp-asn1-navigator",
+    "name": "third-gen-asn1-navigator",
+    "version": "1.0.0",
+    "license": "GPL-v3.0",
     "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gsongsong/3gpp-asn1-navigator"
+    },
     "dependencies": {
         "express": "^4.16.3",
-        "pug": "^2.0.3"
+        "pug": "^2.0.3",
+        "third-gen-asn1-parser": "^1.0.2"
     }
 }

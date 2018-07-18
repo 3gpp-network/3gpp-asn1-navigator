@@ -2,7 +2,7 @@ var express = require('express');
 var config = require('./config');
 var fs = require('fs');
 var path = require('path');
-var parser = require('3gpp-asn1-parser');
+var parser = require('third-gen-asn1-parser');
 
 var asn1PerSpec = {};
 var asn1Dir = './resources';
