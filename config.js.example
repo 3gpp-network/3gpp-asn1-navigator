@@ -1,6 +1,0 @@
-// Rename it to `config.js`
-var config = {
-    port: 3000,
-}
-
-module.exports = exports = config;

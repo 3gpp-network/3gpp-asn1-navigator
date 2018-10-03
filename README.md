@@ -16,7 +16,7 @@ First, put all text files containing ASN.1 under `resources` directory
 
 ### Standalone
 
-Copy `config.js.example` to `config.js` and edit `port`
+Copy `config.json.example` to `config.json` and edit `port`
 
 ```sh
 node server
