@@ -1,6 +1,6 @@
 {
     "name": "third-gen-asn1-navigator",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": "GPL-3.0",
     "main": "server.js",
     "repository": {
@@ -10,6 +10,6 @@
     "dependencies": {
         "express": "^4.16.3",
         "pug": "^2.0.3",
-        "third-gen-asn1-parser": "^1.0.3"
+        "third-gen-asn1-parser": "^1.0.4"
     }
 }
